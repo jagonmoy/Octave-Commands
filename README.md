@@ -99,7 +99,8 @@
   <pre>
    w = -6 + sqrt(10)*(randn(1,100000))
    hist(w)
-  </pre>
+  </pre>`
+
 - ## For showing N bars in histogram in above scenerio
   <pre>
    hist(w,N)
@@ -115,3 +116,55 @@
     help function_name
     help randn
   </pre>
+
+- ## For knowing dimension of a matrix A 
+  <pre>
+   size(A)
+  </pre>
+- ## For knowing 1st dimension of a matrix A 
+  <pre>
+   size(A,1)
+  </pre>
+- ## For knowing 2nd dimension of a matrix A 
+  <pre>
+   size(A,2)
+  </pre>
+- ## For knowing largest dimension of a matrix . It is mainly used for vectors .
+   <pre>
+   length(A) 
+   length([1;2;3;4;5]) %this will return 5 . which is the row number of this vector 
+   </pre>
+
+- ## for knowing Current directory
+  <pre>pwd
+  </pre>
+- ## going to a directory
+  <pre> cd 'path'
+  </pre>
+- ## showing all the files in a path
+  <pre>ls
+  </pre>
+- ## for loading a file
+  <pre>
+  load filename
+  load('filename')
+  </pre>
+- ## for knowing which variables are used 
+   <pre>who</pre>
+- ## for knowing which variables are used with additional information
+   <pre>whos</pre>
+- ## for clearing memory
+   <pre> clear </pre>
+- ## for clearing a certain variable
+   <pre> clear variable_name </pre>
+- ## saving a vector called 'v' in a file called 'filename' in binary format
+   <pre> save filename v</pre>
+- ## saving a vector called 'v' in a file called 'filename' in human readable format 
+   <pre> save filename v -ascii </pre>
+
+- ## For showing a element of jth column in ith row
+   <pre>A(i,j)</pre>
+- ## For showing all the elements of ith row
+   <pre>A(i,:)</pre>
+- ## For showing all the elements of jth column
+   <pre>A(:,j)
