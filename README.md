@@ -25,7 +25,7 @@
   disp(a) %it will print value of pi 
   </pre>
 
-- ## Showing decimal places 
+- ## displaying decimal places 
   <pre>
    disp(sprintf('4 decimal places : 0.4f',a)) %it will print value of pi upto 4 decimal places
   </pre>
@@ -95,18 +95,18 @@
     v = randn(A,B)
    </pre>
 
-- ## For showing histogram
+- ## For displaying histogram
   <pre>
    w = -6 + sqrt(10)*(randn(1,100000))
    hist(w)
   </pre>`
 
-- ## For showing N bars in histogram in above scenerio
+- ## For displaying N bars in histogram in above scenerio
   <pre>
    hist(w,N)
   </pre>
 
-- ## For showing identity matrix
+- ## For displaying identity matrix
   <pre>
    eye(3)
   </pre>
@@ -120,7 +120,7 @@
 - ## For knowing dimension of a matrix A 
   <pre>
    size(A)
-  </pre>
+  </pr e>
 - ## For knowing 1st dimension of a matrix A 
   <pre>
    size(A,1)
@@ -135,36 +135,145 @@
    length([1;2;3;4;5]) %this will return 5 . which is the row number of this vector 
    </pre>
 
-- ## for knowing Current directory
+- ## For knowing Current directory
   <pre>pwd
   </pre>
-- ## going to a directory
+- ## Going to a directory
   <pre> cd 'path'
   </pre>
-- ## showing all the files in a path
+- ## Displaying all the files in a path
   <pre>ls
   </pre>
-- ## for loading a file
+- ## For loading a file
   <pre>
   load filename
   load('filename')
   </pre>
-- ## for knowing which variables are used 
+- ## For knowing which variables are used 
    <pre>who</pre>
-- ## for knowing which variables are used with additional information
+- ## For knowing which variables are used with additional information
    <pre>whos</pre>
-- ## for clearing memory
+- ## For clearing memory
    <pre> clear </pre>
-- ## for clearing a certain variable
+- ## For clearing a certain variable
    <pre> clear variable_name </pre>
-- ## saving a vector called 'v' in a file called 'filename' in binary format
+- ## Saving a vector called 'v' in a file called 'filename' in binary format
    <pre> save filename v</pre>
-- ## saving a vector called 'v' in a file called 'filename' in human readable format 
+- ## Saving a vector called 'v' in a file called 'filename' in human readable format 
    <pre> save filename v -ascii </pre>
 
-- ## For showing a element of jth column in ith row
+- ## For displaying a element of jth column in ith row
    <pre>A(i,j)</pre>
-- ## For showing all the elements of ith row
+- ## For displaying all the elements of ith row
    <pre>A(i,:)</pre>
-- ## For showing all the elements of jth column
+- ## For displaying all the elements of jth column
    <pre>A(:,j)
+- ## For displaying specific rows of a matrix 
+   <pre> 
+   A([i j k], :)
+   A([1 3 4], ;)  % it will display 1st,2nd and 4th row of matrix
+   </pre>
+- ## Replacing a column of a M X N matrix by another vector of M X 1 vector
+  <pre>
+  A = [
+     1 2 3 
+     4 5 6
+     7 8 9
+  ]
+  A(:,2) = [10 ; 11 ; 12]
+  A = [
+    1 10 3 
+    4 11 6 
+    7 12 9
+  ]
+  </pre>
+- ## Replacing a row of a M X N matrix by another vector of 1 X N matrix
+  <pre>
+    A = [
+    1 10 3 
+    4 11 6 
+    7 12 9
+  ]
+  A(3,:) = [21 22 23]
+  A = [
+    1 10 3 
+    4 11 6 
+    21 22 23
+  ]
+  </pre>
+- ## Appending N X 1 vector as a column to M X N matrix
+  <pre>  A = [
+    1 10 3
+    4 11 6
+    21 22 23
+   ]
+   A = [A,[41 ; 42 ; 43]]
+   A = [
+    1 10 3 41
+    4 11 6 42
+    21 22 23 43
+   ]
+  </pre>
+
+- ## Putting All elements in a single column vector
+  <pre>
+   A = [
+     1 2 
+     3 4
+     5 6
+   ]
+   A(:)
+   A = [
+     1
+     3
+     5
+     2
+     4
+     6
+   ]
+  </pre>
+ - ## Suppose A is a matrix of M X N dimension and B is a matrix of M X P dimension now by adding two matrix and create a M X (N+P) dimensional matrix
+  <pre>
+  A = [ 
+    1 2 
+    3 4
+  ]
+  B = [
+    5 6 7 8
+    9 10 11 12
+  ]
+   
+  C = [A B]
+
+  C = [
+    1 2 5 6 7 8
+    3 4 9 10 11 12
+  ]
+
+  </pre>
+
+- ## Suppose A is a Matrix of M X N dimension and B is a matrix of P X N dimension now by adding two matrix and create a (M + P) X N dimensional matrix
+  <pre>
+  A = [
+    1 2
+    3 4
+    5 6
+  ]
+  B = [
+    7 8
+    9 10
+    11 12
+    13 14
+  ]
+  C = [ A ; B]
+  C = [
+    1 2
+    3 4
+    5 6
+    7 8
+    9 10
+    11 12
+    13 14
+  ]
+
+  </pre>
