@@ -1,4 +1,7 @@
 
+- ## How to clear a octave terminal
+  <pre>clc
+  </pre>
 - ## For comment we use % operator
   <pre>
   a = ( 1 == 0) %false
@@ -276,4 +279,188 @@
     13 14
   ]
 
+  </pre>
+
+- ## Suppose A matrix is M X N dimensional and B Matrix is N X P dimensional the the result matrix will be M X P dimensional 
+  <pre>
+   A = [
+     1 2 
+     3 4
+     5 6 
+   ]
+   B = [
+     7 8 9
+     10 11 12
+   ]
+   C = A * B
+  </pre>
+
+- ## We can also do element wise matrix operations .
+  <pre>
+   A = [
+     1 2
+     3 4
+   ]
+   B = [
+     5 6
+     7 8
+   ]
+   C = A .* B
+   C = [
+     5 12
+     21 32
+   ]
+   
+  D = 1 ./ A
+  D = [
+    1 0.5 
+    0.33 0.25
+  ]
+  E = exp(A)
+  E = [
+    1.7183 7.3891
+    20.0855 54.5982
+  ]
+  </pre>
+
+- ## How to Transpose a matrix of M X N to N X M matrix
+  <pre>
+  A = [
+    1 2 
+    3 4
+    5 6
+  ]
+  B = A'
+  B = [
+    1 3 5
+    2 4 6
+  ]
+
+  </pre>
+
+- ## How to find the highest value and index of an element from a M X 1 dimensional matrix or 1 * N dimensional matrix
+  <pre>
+  A = [ 7 ; 11 ; 13 ; 2]
+  [val,ind] = max(A)
+  val = [ 13 ] 
+  ind = [ 3 ]
+  B = [ 10 19 17 15]
+  [val,ind] = max(B)
+  val = [ 19 ] 
+  ind = [2]
+  </pre>
+
+- ## For A = M X N dimensional matrix where M > 1 and N > 1 max(A) will return max value of every column and row number of the max element of every column . 
+  <pre>
+   A = [
+     6 9
+     13 5
+   ]
+
+   [val,ind] = max(A)
+   val = [13 9]
+   ind = [2 1]
+  </pre>
+
+- ## For A = 1 X N dimensional matrix find(A >= val) will return the column number of the elements which has value >= val . For B = M X 1 dimensional matrix find(B >= val) will return the row number of the elements which has value >= val .For the First case will be  1 X P dimensional matrix where P is the number of elements which follows above condition and for the second case it will be P X 1 dimensional matrix(vector)
+  <pre>
+   A = [ 1 5 7 9];
+   ind = find( A >= 5 )
+   ind = [2 3 4]
+   B = [ 9 ; 11 ; 2 ; 1]
+   ind = find ( B <= 2)
+   ind = [ 
+           3 
+           4
+         ]
+  </pre>
+  
+- ## For C = M X N dimensional matrix where M > 1 and N > 1 find(C >= val ) will return two P X 1 dimensional matrices(vectors) . One is for the row indexes of the element which follows above condition and other is for the column indexes of the corresponding element . Here P is the number of element which follows above condition 
+
+  <pre>
+  A = [ 1 2 11 ; 3 13 15 ; 17 4 19]
+  [r,c] = find (A <= 4)
+
+  r = [
+    1
+       2
+       1
+       3
+  ]
+
+    c = [
+       1
+       1
+       2
+       2
+     ]
+  </pre>
+
+- ## For any M X 1 or 1 X N dimensional matrix sum,prod these function will return a single value . But for any M X N dimensional matrix where M > 1 and N > 1 there sum,prod these functions will return sum for every column thus a 1 X N dimensional matrix
+
+  <pre>
+  A = [ 1 2 3 4]
+  ans = sum(A)
+  ans = 10
+  B = [ 1 2 3 4]
+  ans = sum(B)
+  ans = 24
+  C = [
+      1 2 3 
+      4 5 6
+  ]
+  ans = sum(C)
+  ans = [5 7 9]
+  </pre>
+
+- ## ceil,floor this functions works for any value of M and N in any M X N dimensional matrix
+
+  <pre>
+  A = [
+    1.67 2.33 3.01
+    2.33 6.666 7.00
+  ]
+   
+  ans = ceil(A)
+
+  ans = [
+     2 3 4
+     3 7 7
+  ]
+  </pre>
+
+- ## for any A = M X N dimensional matrix max(A,[],1) and max(A) is same . it returns the max value of each column and create a 1 X N dimensional matrix
+  <pre>
+  A = [ 2 3 4 ; 3 7 7]
+  ans = max(A,[],1)
+  ans = [ 3 7 7]
+  </pre>
+
+- ## for any A = M X N dimensional matrix max(A,[],2)  returns the max value of each row and create a M X 1 dimensional matrix
+
+  <pre>
+  A = [ 2 3 4 ; 3 7 7]
+  ans = max(A,[],2)
+  ans = [ 
+         4 
+         7
+        ]
+  </pre>
+
+- ## How to take the max element of a A = M X N matrix rather than taking max element rowwise/columnwise ? There is two way to do this . One is max(max(A)) and other one is max(A(:))
+  <pre>
+  A = [
+    1 2 3 
+    4 5 6
+    1 2 3
+  ]
+  ans = max(max(A))
+  ans = [6]
+  ans = max(A(:))
+  ans = [6]
+  </pre>
+
+- ## How to inverse a matix A 
+  <pre>
+  pinv(A)
   </pre>
