@@ -464,3 +464,73 @@
   <pre>
   pinv(A)
   </pre>
+
+- ## Plotting data 
+  <pre>
+     t = [0.1: 0.01 : 0.98] % basically it will increment the value by 0.01 upto 0.98 and create a 1 X (((0.98-0.1)/0.01) + 1 ) dimensional matrix 
+     y1 = sin(2*pi*4*t)  % created a 1 X (((0.98-0.1)/0.01) + 1 ) dimensional matrix  depending on the value of t . It's a sine curve
+     plot(t,y1) % plotting t in X-axis and y1 in Y-axis
+  </pre>
+- ## How to write a plot above another plot 
+  <pre>
+  hold on ; % to keep the previous plot
+  y2 = cos(2*pi*4*t)  % now create a new matrix which we will plot
+  plot(t,y2,'r') % creating a new plot above previous plot and defininf a colour red so that we can differentiate between two curve
+  </pre>
+- ## How to label X axis and Y axis
+  <pre>
+   xlabel('time') % labelling X-axis as time
+   ylabel('value) % labelling Y-axis as value
+  </pre>
+- ## How to label curves 
+  <pre>
+  legend('sin','cos') % labelling two curve as sin and cos . one can give any name according to the situation
+  </pre>
+- ## How to give a title 
+  <pre>
+   title('title name')  % inside the quotation we need to give the title name
+  </pre>
+- ## How to save the picture
+  <pre>
+  print -dpng 'pictureName.png' %it will save the picture in current directory with the given name in png format
+  </pre>
+- ## How to close a plot 
+  <pre>
+  close 
+  </pre>
+- ## How to explicitly define a figure before plotiing
+  <pre>
+   figure(1); plot(t,y1) % naming the figure as 'figure1' for the current plot
+   figure(2); plot(t,y2) % naming the figure as 'figure2' for the current plot
+  </pre>
+- ## How to divide a figure means subplot a figure
+  <pre>
+   subplot(1,3,1) % It means divide the figure as 1 X 3 grid and access the first one
+   subplot(1,5,2) % It means divide the figure as 1 X 5 grid and access the second one
+  </pre>
+
+- ## How to range horizontal values and vertical values 
+  <pre>
+  axis([0.5 1 -1 1]) % It means value in X-axis is between 0.5 and 1 and value in Y-axis is between -1 and 1 
+  </pre>
+
+- ## How to clear a figure
+  <pre>
+   clf
+  </pre>
+
+- ## How to create a N X N magic matrix . A matrix where every column and rows have same sum value
+  <pre>
+  magic(N)
+  </pre>
+
+- ## Visualize a matrix in colourmap
+  <pre>
+   imagesc(magic(5))
+  </pre>
+
+- ## How to run some commands sequentially 
+   <pre>
+   imagesc(magic(5)),colorbar,colormap gray  % here 3 commands will run sequentially one after another and will display the result 
+   imagesc(magic(5));colorbar;colormap gray  % this will also run the commands sequentially but will not display the result
+   </pre>
